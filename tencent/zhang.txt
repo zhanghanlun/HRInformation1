@@ -1,0 +1,13 @@
+
+
+positionName
+
+positionLink
+
+positionType
+
+peopleNumber
+
+workLocation
+
+publishTime
