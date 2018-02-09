@@ -25,6 +25,9 @@ class TencenthrSpider(scrapy.Spider):
             item['positionName'] = node.xpath("./td[1]/a/text()").extract()
             #获取职位链接信息存储到item中
             item['positionLink'] = node.xpath("./td[1]/a/@href").extract()[0]
+
+            url_second=node.xpath("./td[1]/a/@href").extract()[0]
+
             #存储到职位类型到item对象中
             if len(node.xpath("./td[2]/text()").extract()):
                 item['positionType'] = node.xpath("./td[2]/text()").extract()
@@ -38,6 +41,9 @@ class TencenthrSpider(scrapy.Spider):
             item['publishTime']=node.xpath("./td[5]/text()").extract()
 
 
+
+
+            yield scrapy.Request("https://hr.tencent.com/"+url_second,callback=self.parse_second)
 
             yield item
 
@@ -55,6 +61,8 @@ class TencenthrSpider(scrapy.Spider):
         #    url=self.base_url+str(self.offset)
          #   yield scrapy.Request(url,callback=self.parse)
     def parse_second(self,response):
+
+
         pass
 
 
