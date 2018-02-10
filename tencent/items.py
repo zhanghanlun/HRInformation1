@@ -22,3 +22,18 @@ class TencentItem(scrapy.Item):
     workLocation=scrapy.Field()
 
     publishTime=scrapy.Field()
+
+    positionInformation=scrapy.Field()
+
+class item_Detail(scrapy.Item):
+
+
+    pName=scrapy.Field()
+
+    pNumber=scrapy.Field()
+
+    pRes=scrapy.Field()
+
+    pRequire=scrapy.Field()
+
+
